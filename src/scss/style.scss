@@ -1,0 +1,59 @@
+$primary: #ff2d2d;
+@import "~bootstrap/scss/bootstrap";
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+@include media-breakpoint-down(lg) {
+    .nav-item{
+        padding: 10px 0;
+    }
+    .nav-link{
+        line-height: 50px !important;
+    }
+}
+
+.bg-dark{
+    background-color: #313030 !important;
+}
+.btn {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+    padding: 10px 50px;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    line-height: 60px;
+    &.active {
+        @extend .nav-link;
+        background-color: $primary;
+    }
+}
+
+.header {
+    padding: 20px 0;
+    background-color: #f6f2f2;
+    &-content {
+        padding: 50px 0;
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+    }
+    &-img{
+        width: 100%;
+
+    }
+}
+.header-desc{
+    padding: 20px 0;
+}
