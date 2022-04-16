@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const miniCss = require('mini-css-extract-plugin');
-
+const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     entry: path.resolve(__dirname, 'src/app.js'),
     output: {
@@ -29,5 +29,15 @@ module.exports = {
             filename: 'style.css',
         }),
 
-    ]
+    ],
+
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                test: /\.js(\?.*)?$/i,
+                parallel: true,
+            }),
+        ],
+    },
 };
