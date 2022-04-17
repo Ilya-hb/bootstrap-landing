@@ -21,7 +21,7 @@ h2 {
 }
 h3 {
     color: $secondary;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .bg-dark {
     background-color: #313030 !important;
@@ -41,9 +41,9 @@ h3 {
 }
 
 .nav-link {
-    text-transform: uppercase;
     line-height: 60px;
     padding: 10px 30px !important;
+    font-weight: 500;
     &.active {
         @extend .nav-link;
         background-color: $primary;
@@ -78,7 +78,7 @@ h3 {
     margin-bottom: 30px;
 }
 
-.redline{
+.redline {
     width: 200px;
     height: 3px !important;
     color: $primary;
@@ -87,14 +87,53 @@ h3 {
     margin: auto;
 }
 
-.chosen{
+.chosen {
     color: $primary !important;
 }
 
-.item{
-    background-color: #F5F0DD;
-    width: 300px;
-    height: 300px;
+@mixin item-sizing($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: #f5f0dd;
+}
+
+.item {
+    @include item-sizing(300px, 300px);
+}
+.item-200 {
+    @include item-sizing(200px, 200px);
+}
+.main-item {
+    @include item-sizing(300px, 400px);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.overlay-container {
+    @include item-sizing(200px, 200px);
+    position: relative;
+}
+/* When you mouse over the container, fade in the overlay title */
+.overlay-container:hover .overlay {
+    opacity: 1;
+}
+
+.our-team {
+    margin-top: 100px;
 }
 
 @include media-breakpoint-down(lg) {
@@ -112,6 +151,14 @@ h3 {
         text-align: center;
     }
 }
+@include media-breakpoint-down(md) {
+    .item,
+    .item-200,
+    .main-item,
+    .overlay-container {
+        margin: auto;
+    }
+}
 @include media-breakpoint-down(sm) {
     h1 {
         font-size: 2rem !important;
@@ -119,14 +166,12 @@ h3 {
     h2 {
         font-size: 1.5rem;
     }
-    .navbar{
+    .navbar {
         position: fixed;
+        z-index: 99999;
         top: 0;
     }
-    .nav{
+    .nav {
         flex-direction: column;
     }
 }
-
-
-
