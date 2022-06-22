@@ -1,4 +1,4 @@
-# sass-bulder-example
+# Bootstrap Landing
 
 
 
@@ -22,7 +22,7 @@ git push -uf origin main
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/HwsoftArtur/sass-bulder-example/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/Ilya-hb/bootstrap-landing/-/settings/integrations)
 
 ## Collaborate with your team
 
