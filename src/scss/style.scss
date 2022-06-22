@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+$primary: #ff2d2d;
+$secondary: #585858;
+@import "~bootstrap/scss/bootstrap";
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+h2 {
+    color: $secondary;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+h3 {
+    color: $secondary;
+    font-size: 1.8rem;
+}
+.bg-dark {
+    background-color: #313030 !important;
+}
+.btn {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+    padding: 10px 50px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.btn-secondary {
+    background-color: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+}
+
+.nav-link {
+    line-height: 60px;
+    padding: 10px 30px !important;
+    font-weight: 500;
+    &.active {
+        @extend .nav-link;
+        background-color: $primary;
+    }
+}
+
+.header {
+    padding: 20px 0;
+    background-color: #f6f2f2;
+
+    &-img {
+        max-width: 100%;
+    }
+}
+.header-content {
+    padding: 50px 0;
+    h1 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+}
+.header-desc {
+    padding: 20px 0;
+    color: $secondary;
+}
+
+.icon {
+    font-size: 30px;
+    color: $primary;
+    margin-bottom: 30px;
+}
+
+.redline {
+    width: 200px;
+    height: 3px !important;
+    color: $primary;
+    opacity: 1;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.chosen {
+    color: $primary !important;
+}
+
+@mixin item-sizing($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: #f5f0dd;
+}
+
+.item {
+    @include item-sizing(300px, 300px);
+}
+.item-200 {
+    @include item-sizing(200px, 200px);
+}
+.main-item {
+    @include item-sizing(300px, 400px);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.overlay-container {
+    @include item-sizing(200px, 200px);
+    position: relative;
+}
+/* When you mouse over the container, fade in the overlay title */
+.overlay-container:hover .overlay {
+    opacity: 1;
+}
+
+.our-team {
+    margin-top: 100px;
+}
+
+.bg-wheat {
+    background-color: #f5f0dd;
+}
+.subscribe {
+    padding: 100px 0;
+}
+.form-input {
+    padding: 20px;
+    border: none;
+}
+.btn-subs {
+    padding: 17px 40px;
+}
+
+.contact-container {
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}
+.dark-container {
+    display: flex;
+    justify-content: end;
+}
+
+.inp {
+    background-color: #e5e5e5;
+    padding: 20px 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.side-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    padding: 80px 50px 100px 50px;
+    color: white;
+    font-size: 14px;
+    height: 91.5%;
+    max-width: 100%;
+    .side-link {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            color: red;
+        }
+    }
+}
+
+.footer {
+    background-color: #313030;
+    color: lightgrey;
+
+    .social-icons {
+        font-size: 30px;
+    }
+}
+@include media-breakpoint-down(xxl) {
+    .nav-center {
+        justify-content: center;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .nav-item {
+        padding: 10px 0;
+    }
+    .nav-link {
+        line-height: 50px;
+    }
+    .btn {
+        padding: 10px 100px;
+    }
+    .navbar {
+        max-width: 100%;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+    .col-md,
+    .row {
+        text-align: center;
+    }
+    .redline {
+        margin: auto !important;
+    }
+
+    .contact-col {
+        justify-content: center !important;
+    }
+}
+@include media-breakpoint-down(md) {
+    .item,
+    .item-200,
+    .main-item,
+    .overlay-container {
+        margin: auto;
+    }
+    .overlay {
+        opacity: 1;
+    }
+    .btn-subs {
+        max-width: 80% !important;
+    }
+    .icons-col {
+        text-align: center !important;
+    }
+    .form-col {
+        margin-right: 0 !important;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-subs {
+        padding: 17px 20px;
+    }
+}
